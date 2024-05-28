@@ -2,19 +2,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const data = await get_pools();
     const pools = data["body"]["pools"];
-    const pools_data = data["body"]["data"][0];
-    console.log(`pools: ${pools}`);
+    const pools_data = data["body"]["data"];
+    // console.log(`pools: ${JSON.stringify(pools_data)}`);
+    // TO DO GET LATEST POOL DATA AND ADD IT TO POOL CARD
     const latestPoolData = getLatestPoolData(pools, pools_data);
-    createPoolCards(pools);
+    // console.log("latestPoolData", JSON.stringify(latestPoolData));
+    createPoolCards(latestPoolData);
   } catch (error) {
     console.error("Error updating pool cards:", error);
   }
 });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const latestPoolData = getLatestPoolData(pools, pools_data);
-//   createPoolCards(latestPoolData);
-// });
 
 // Get the form and add the event listener
 const addTestForm = document.getElementById("addTestForm");
@@ -171,7 +168,8 @@ function getLatestPoolData(pools, poolsData) {
   console.log(`getLatestPoolData ${poolsData}`);
   const latestData = {};
 
-  poolsData.forEach((data) => {
+  for (let i = 0; i < poolsData.length; i++) {
+    const data = poolsData[i];
     const poolId = data.id;
     const dataTime = new Date(data.time).getTime();
 
@@ -181,7 +179,9 @@ function getLatestPoolData(pools, poolsData) {
     ) {
       latestData[poolId] = data;
     }
-  });
+
+    console.log(`getLatestPoolData ${poolsData}`);
+  }
 
   return pools.map((pool) => ({
     ...pool,
@@ -222,7 +222,7 @@ function createPoolCards(pool_list) {
     cardTitle.innerText = `${pool.name}`;
 
     const freeChlorineP = document.createElement("p");
-    freeChlorineP.innerHTML = `Free Chlorine: ${pool.free_chlorine} ppm <span class="text-success"><i class="fas fa-check"></i></span>`;
+    freeChlorineP.innerHTML = `Free Chlorine: ${pool_list[i].free_chlorine} ppm <span class="text-success"><i class="fas fa-check"></i></span>`;
 
     const combinedChlorineP = document.createElement("p");
     combinedChlorineP.innerHTML = `Combined Chlorine: ${pool.combined_chlorine} ppm <span class="text-success"><i class="fas fa-check"></i></span>`;
