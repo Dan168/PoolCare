@@ -1,0 +1,256 @@
+:root {
+  --primary-color: #1bb6ec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font: 20px Montserrat, sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+}
+.title {
+  overflow-wrap: break-word;
+}
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+}
+p {
+  font-size: 16px;
+  font-weight: 100;
+}
+.margin {
+  margin-bottom: 45px;
+}
+.bg-1 {
+  background-color: var(--primary-color); /* Theme Colour */
+  color: #ffffff;
+}
+.bg-2 {
+  background-color: #474e5d; /* Gray */
+  color: #ffffff;
+}
+.bg-3 {
+  background-color: #ffffff; /* White */
+  color: #555555;
+}
+.bg-4 {
+  background-color: #2f2f2f; /* Black Gray */
+  color: #fff;
+}
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+  padding: 0 15px;
+}
+
+.fill {
+  margin: 8% 0;
+  padding: 10% 5%;
+}
+
+.feature-logo {
+  width: 100%;
+  min-width: 88px;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  border-radius: 25px;
+  border: 3px solid white;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px;
+}
+
+.pill-input {
+  border-radius: 25px;
+  border: 3px solid white;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px;
+}
+
+#footer.form-footer {
+  display: none !important;
+}
+
+span {
+  border-right: 0.05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+.icon-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.text-dark {
+  color: #212529 !important;
+}
+
+/* .features {
+  padding: 1.5rem;
+  max-width: 100%;
+} */
+
+/* .feature-card {
+  min-height: 220px;
+} */
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.float-left {
+  float: left;
+  width: 15%;
+  margin-top: 20px;
+
+  img {
+    width: 70%;
+  }
+}
+
+.float-right {
+  float: right;
+  width: 85%;
+  padding: 15px;
+  text-align: left;
+  max-width: 85%;
+
+  h3 {
+    font-weight: bolder;
+    margin-top: 0;
+  }
+}
+
+.float-left-icon {
+  float: left;
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  img {
+    width: 50%;
+  }
+}
+
+.float-right-text {
+  float: right;
+  width: 70%;
+  padding: 15px;
+  text-align: left;
+  word-wrap: break-word;
+
+  p {
+    padding-right: 20%;
+  }
+
+  h3 {
+    font-weight: bolder;
+    margin-top: 0;
+  }
+}
+
+.btn-theme-colour {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+.filter-guides-green {
+  filter: invert(57%) sepia(82%) saturate(1156%) hue-rotate(159deg)
+    brightness(95%) contrast(95%);
+}
+
+.img-overflow {
+  position: relative;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.language-list {
+  /* list-style: none; */
+  padding: 0;
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+}
+
+.language-english {
+  display: none;
+}
+
+.panel-heading {
+  background-color: var(--primary-color) !important;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .main-title {
+    line-height: 1.5em;
+    min-height: 6em;
+  }
+  .fill {
+    margin: 0% 0;
+  }
+
+  .features {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .feature-logo {
+    min-width: 15px;
+    max-width: 50px;
+  }
+
+  .float-left-icon {
+    width: 20%;
+  }
+
+  .float-right-text {
+    width: 80%;
+    p {
+      padding-right: 0;
+    }
+  }
+}

@@ -1,411 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pool Maintenance Dashboard</title>
+    <title>Pool Care App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Digitally Log, Monitor & Analyse Your Pool Data!"
+    />
+    <meta name="keywords" content="Swimming Pool Data Tracking Monitoring" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/img/branding/logo.png" />
     <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/translations.js"></script>
+    <style></style>
   </head>
   <body>
-    <div class="fixed-header">
-      <nav class="navbar">
-        <button class="navbar-toggler" id="menu-toggle">
-          <span class="navbar-toggler-icon"></span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div>
+            <a class="navbar-brand" href="#">
+              <img
+                src="img/branding/logo.png"
+                alt="poolcare.app Logo"
+                height="50px"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#how-it-works">HOW IT WORKS</a>
+            </li>
+            <li>
+              <a href="#benefits">OUR BENEFITS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- First Container -->
+    <div class="container-fluid bg-1 d-flex text-center justify-content-center">
+      <div class="row">
+        <div class="col-sm-6 fill">
+          <div class="main-title"><h1 class="title">Pool Care App</h1></div>
+          <h2><b>Digitally Log, Monitor & Analyse </b> Your Pool Data</h2>
+          <br />
+          <a
+            href="mailto:contact@vouker.com?subject = Contacting regarding poolcare.app"
+          >
+            <button type="button" class="btn btn-light btn-lg text-dark">
+              Contact Us
+            </button>
+          </a>
+        </div>
+        <div class="col-sm-6">
+          <img
+            src="img/poolcare.gif"
+            class="img-responsive"
+            alt="poolcare.app Tour Phone Demo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Container (Grid) -->
+    <div class="container bg-3 px-10 text-center features" id="how-it-works">
+      <br />
+      <h2>How It Works</h2>
+      <b>Log. Monitor. Analyse. Improve.</b>
+      <p>
+        Our software simplifies and streamlines the process of recording pool
+        tests and plant room maintenance, ensuring that your pool operations run
+        smoothly and efficiently – saving you time, labour, and money.
+      </p>
+      <br />
+      <br />
+      <div class="row">
+        <!-- Feature Card -->
+        <div class="col-sm-12 clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/create-guide.svg"
+              class="feature-logo filter-guides-green"
+              alt="Create Icon"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>1. Log.</h3>
+            <p>
+              Once your account is set up, you can begin adding pool tests. This
+              can be done as and when needed, with the flexibility to record
+              tests on a daily or weekly basis. Our intuitive interface allows
+              you to easily input test results, including parameters such as
+              chlorine levels, pH levels, alkalinity, and more.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-sm-12 clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="poolcare.app Logo"
+            />
+          </div>
+          <div class="float-right-text text-box">
+            <h3>2. Monitor (Notifications)</h3>
+            <p>
+              To keep your management team informed, our software sends
+              automatic email notifications to managers whenever a pool test is
+              completed. These emails include a summary of the test results,
+              highlighting any critical issues that require immediate action.
+              This ensures that your team can quickly address any problems and
+              maintain optimal pool conditions.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-sm-12 clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="poolcare.app Logo"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>3. Analyse</h3>
+            <p>
+              <b
+                >Our main dashboard provides a centralized view of all your
+                pools, offering valuable insights through various graphs and
+                performance metrics. You can monitor uptime and downtime, track
+                maintenance activities, and view historical data trends. This
+                visual representation helps you quickly assess the status of
+                each pool and make data-driven decisions to enhance your
+                operations.</b
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-sm-12 clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/tour-guide.svg"
+              class="feature-logo filter-guides-green"
+              alt="Improve Your Pool"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>4. Improve!</h3>
+            <p>
+              By using our software, you gain access to a wealth of data that
+              can be used to continuously improve your pool operations. Analyse
+              trends, identify recurring issues, and implement best practices to
+              enhance water quality and reduce downtime. Our software empowers
+              you to take proactive measures and ensure the highest standards of
+              pool maintenance. With our user-friendly software, managing pool
+              tests and plant room maintenance has never been easier. Stay
+              informed, stay efficient, and keep your pools in top condition
+              with our comprehensive solution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-1 px-10 text-center features">
+      <h2 class="">Result?</h2>
+
+      <h3><b>Simpler & Smarter Pool Care!</b></h3>
+      <br />
+    </div>
+
+    <!-- Second Container -->
+    <!-- <div class="container-fluid bg-2 text-center">
+      <h3 class="">Translate into 75 languages instantly with Guides.app</h3>
+    </div> -->
+
+    <!-- Third Container (Grid) -->
+    <div class="container-fluid bg-3 px-10 text-center features" id="benefits">
+      <h2 class="">Our Benefits</h2>
+      <br />
+      <div class="row equal">
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="Phone Image"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Enhanced Water Quality</h3>
+            <p>
+              With timely and accurate recording of pool tests, you ensure that
+              your water quality remains consistently high. Immediate
+              notifications of test results allow you to address any issues
+              swiftly, preventing potential problems before they escalate.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="poolcare.app Logo"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Increased Operational Efficiency</h3>
+            <p>
+              Our software streamlines the process of logging and managing pool
+              tests and maintenance tasks. This reduces the administrative
+              burden on your staff and allows them to focus on more critical
+              aspects of pool management. The automated reporting and
+              notifications save valuable time and ensure that no important
+              detail is overlooked.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/share.svg"
+              class="feature-logo filter-guides-green"
+              alt="Share Symbol"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Improved Compliance</h3>
+            <p>
+              Staying compliant with health and safety regulations is crucial
+              for pool operations. Our software helps you maintain detailed
+              records of all tests and maintenance activities, providing you
+              with the documentation needed to demonstrate compliance during
+              inspections.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/review-thumbs-up.svg"
+              class="feature-logo filter-guides-green"
+              alt="Thumbs Up"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Proactive Maintenance</h3>
+            <p>
+              With detailed insights and historical data at your fingertips, you
+              can identify patterns and trends that may indicate potential
+              issues. This allows you to take proactive measures, scheduling
+              maintenance before problems arise and ensuring the longevity of
+              your pool equipment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row equal">
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="Phone Image"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Informed Decision-Making</h3>
+            <p>
+              The comprehensive dashboard and insightful reports give you a
+              clear understanding of your pool’s performance. Armed with this
+              data, you can make informed decisions to optimize operations,
+              improve water quality, and enhance the overall user experience.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="poolcare.app Logo"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Enhanced Communication</h3>
+            <p>
+              Automatic email notifications keep your management team in the
+              loop, ensuring that everyone is aware of the pool’s status and any
+              immediate actions required. This enhances communication and
+              collaboration among your team, fostering a more cohesive and
+              responsive management approach.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/share.svg"
+              class="feature-logo filter-guides-green"
+              alt="Share Symbol"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Reduced Downtime</h3>
+            <p>
+              By efficiently tracking and addressing maintenance needs, you
+              minimize pool downtime. This ensures that your pools are available
+              and operational for users, enhancing customer satisfaction and
+              maximizing the use of your facilities.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-4 col-lg-3 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/review-thumbs-up.svg"
+              class="feature-logo filter-guides-green"
+              alt="Thumbs Up"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Cost Savings</h3>
+            <p>
+              Proactive maintenance and efficient management lead to significant
+              cost savings. By preventing major issues and extending the
+              lifespan of your equipment, you reduce the need for costly repairs
+              and replacements. Additionally, optimizing chemical use and
+              maintenance schedules can lead to further financial benefits.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row equal">
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-6 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="Phone Image"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Increased Accountability</h3>
+            <p>
+              Detailed records of all tests and maintenance activities promote
+              accountability among your staff. This ensures that all tasks are
+              completed as required and provides a clear trail of actions taken,
+              which is essential for audits and reviews.
+            </p>
+          </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col-xs-12 col-md-6 feature-card clearfix">
+          <div class="float-left-icon">
+            <img
+              src="img/svg/phone.svg"
+              class="feature-logo filter-guides-green"
+              alt="poolcare.app Logo"
+            />
+          </div>
+          <div class="float-right-text">
+            <h3>Continuous Improvement</h3>
+            <p>
+              The data and insights provided by our software enable you to
+              continuously improve your pool operations. By analysing
+              performance trends and identifying areas for improvement, you can
+              implement best practices and maintain the highest standards of
+              pool management.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Container -->
+    <div class="container-fluid bg-1 text-center">
+      <h3 class="">In Summary</h3>
+      <p>
+        Our software delivers tangible results that enhance the
+        <b>quality, efficiency, and overall management of your pools</b>.
+        Experience the difference with a solution designed to meet the unique
+        needs of pool operators and ensure the best possible outcomes for your
+        facilities.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+      <p>www.poolcare.app</p>
+      <a
+        href="mailto:contact@vouker.com?subject = Contacting regarding poolcare.app"
+      >
+        <button
+          type="button"
+          class="btn btn-danger btn-theme-colour btn-lg text-light"
+        >
+          Contact Us
         </button>
-        <a class="navbar-brand" href="#">
-          <h3 class="text-dark">PoolCare</h3>
-        </a>
-      </nav>
-    </div>
-    <div class="d-flex" id="wrapper">
-      <!-- Sidebar -->
-      <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="list-group list-group-flush">
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-light text-dark"
-            >Testing</a
-          >
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-light text-dark"
-            >Backwashing</a
-          >
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-light text-dark"
-            >Maintenance</a
-          >
-        </div>
-      </div>
-      <!-- /#sidebar-wrapper -->
-
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid mt-5 pt-4">
-          <!-- Pool Boxes -->
-          <div class="row mb-4" id="pool-container">
-            <!-- Add more pool cards here -->
-          </div>
-
-          <!-- Graph Boxes -->
-          <div class="row">
-            <div class="col-lg-6 mb-4">
-              <div class="card bg-white text-dark">
-                <div class="card-header">
-                  <h5 class="card-title">pH Level Readings</h5>
-                </div>
-                <div class="card-body">
-                  <canvas id="phChart"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-              <div class="card bg-white text-dark">
-                <div class="card-header">
-                  <h5 class="card-title">Temperature Readings</h5>
-                </div>
-                <div class="card-body">
-                  <canvas id="temperatureChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6 mb-4">
-              <div class="card bg-white text-dark">
-                <div class="card-header">
-                  <h5 class="card-title">Free Chlorine Readings</h5>
-                </div>
-                <div class="card-body">
-                  <canvas id="fchlorinechart"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-              <div class="card bg-white text-dark">
-                <div class="card-header">
-                  <h5 class="card-title">Out of Parameter Tests</h5>
-                </div>
-                <div class="card-body">
-                  <canvas id="outOfParameterChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="addTestModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="addTestModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <form id="addTestForm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="addTestModalLabel">Add Test</h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="poolSelect">Select Pool</label>
-                <select class="form-control" id="poolSelect" name="poolSelect">
-                  <option value="1">Pool 1</option>
-                  <option value="2">Pool 2</option>
-                  <option value="3">Pool 3</option>
-                  <option value="4">Pool 4</option>
-                  <option value="5">Pool 5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="chlorineLevel">Free Chlorine Level (ppm)</label>
-                <input
-                  type="float"
-                  class="form-control"
-                  id="chlorineLevel"
-                  name="chlorineLevel"
-                  placeholder="Enter chlorine level"
-                />
-              </div>
-              <div class="form-group">
-                <label for="combinedChlorine"
-                  >Combined Chlorine Level (ppm)</label
-                >
-                <input
-                  type="float"
-                  class="form-control"
-                  id="combinedChlorine"
-                  name="combinedChlorine"
-                  placeholder="Enter combined chlorine level"
-                />
-              </div>
-              <div class="form-group">
-                <label for="temperature">Temperature (°C)</label>
-                <input
-                  type="float"
-                  class="form-control"
-                  id="temperature"
-                  name="temperature"
-                  placeholder="Enter temperature"
-                />
-              </div>
-              <div class="form-group">
-                <label for="clarity">Water clarity (1-5)</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="clarity"
-                  name="clarity"
-                  placeholder="Enter water clarity"
-                />
-              </div>
-              <div class="form-group">
-                <label for="name">Tester's name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="submit" class="btn btn-primary">Save test</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("menu-toggle")
-          .addEventListener("click", function () {
-            document.getElementById("wrapper").classList.toggle("toggled");
-            document
-              .getElementById("sidebar-wrapper")
-              .classList.toggle("toggled");
-            document
-              .getElementById("page-content-wrapper")
-              .classList.toggle("toggled");
-          });
-      });
-
-      var ctx1 = document.getElementById("phChart").getContext("2d");
-      var phChart = new Chart(ctx1, {
-        type: "line",
-        data: {
-          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          datasets: [
-            {
-              label: "Pool 1",
-              data: [7.0, 7.2, 7.1, 7.3, 7.4, 7.2, 7.1],
-              backgroundColor: "rgba(0, 123, 255, 0.2)",
-              borderColor: "rgba(0, 123, 255, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 2",
-              data: [7.4, 7.3, 7.3, 6.8, 6.8, 7.0, 7.0],
-              backgroundColor: "rgba(255, 99, 132, 0.2)",
-              borderColor: "rgba(255, 99, 132, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 3",
-              data: [7.2, 7.1, 7.3, 7.2, 7.4, 7.1, 7.0],
-              backgroundColor: "rgba(255, 206, 86, 0.2)",
-              borderColor: "rgba(255, 206, 86, 1)",
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      var ctx2 = document.getElementById("temperatureChart").getContext("2d");
-      var temperatureChart = new Chart(ctx2, {
-        type: "line",
-        data: {
-          labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-          ],
-          datasets: [
-            {
-              label: "Pool 1",
-              data: [25, 26, 24, 27, 26, 25, 25],
-              backgroundColor: "rgba(0, 123, 255, 0.2)",
-              borderColor: "rgba(0, 123, 255, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 2",
-              data: [26, 27, 25, 28, 27, 26, 26],
-              backgroundColor: "rgba(255, 99, 132, 0.2)",
-              borderColor: "rgba(255, 99, 132, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 3",
-              data: [24, 25, 23, 26, 25, 24, 24],
-              backgroundColor: "rgba(255, 206, 86, 0.2)",
-              borderColor: "rgba(255, 206, 86, 1)",
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      var ctx3 = document
-        .getElementById("outOfParameterChart")
-        .getContext("2d");
-      var outOfParameterChart = new Chart(ctx3, {
-        type: "pie",
-        data: {
-          labels: ["Pool 1", "Pool 2", "Pool 3"],
-          datasets: [
-            {
-              label: "Out of Parameter Tests",
-              data: [2, 3, 1],
-              backgroundColor: [
-                "rgba(0, 123, 255, 0.7)",
-                "rgba(255, 99, 132, 0.7)",
-                "rgba(255, 206, 86, 0.7)",
-              ],
-              borderColor: [
-                "rgba(0, 123, 255, 1)",
-                "rgba(255, 99, 132, 1)",
-                "rgba(255, 206, 86, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: "top",
-            },
-            tooltip: {
-              callbacks: {
-                label: function (tooltipItem) {
-                  return tooltipItem.label + ": " + tooltipItem.raw + " tests";
-                },
-              },
-            },
-          },
-        },
-      });
-
-      var ctx4 = document.getElementById("fchlorinechart").getContext("2d");
-      var fchlorinechart = new Chart(ctx4, {
-        type: "line",
-        data: {
-          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          datasets: [
-            {
-              label: "Pool 1",
-              data: [0.5, 1.0, 1.0, 1.5, 0.2, 1.0, 1.0],
-              backgroundColor: "rgba(0, 123, 255, 0.2)",
-              borderColor: "rgba(0, 123, 255, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 2",
-              data: [1.0, 1.0, 1.0, 1.5, 3.0, 1.5, 1.0],
-              backgroundColor: "rgba(255, 99, 132, 0.2)",
-              borderColor: "rgba(255, 99, 132, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 3",
-              data: [4.5, 4.0, 4.0, 5.0, 5.0, 5.0, 4.0],
-              backgroundColor: "rgba(255, 206, 86, 0.2)",
-              borderColor: "rgba(255, 206, 86, 1)",
-              borderWidth: 1,
-            },
-            {
-              label: "Pool 4",
-              data: [1.5, 1.5, 0.0, 2.0, 0.2, 1.0, 3.0],
-              backgroundColor: "rgb(113,16,152)",
-              borderColor: "rgb(208,82,255)",
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script src="main.js"></script>
+      </a>
+      <br />
+      <br />
+      <p>developed by <a href="https://vouker.com/">Vouker</a></p>
+    </footer>
   </body>
 </html>
