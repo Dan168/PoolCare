@@ -3,18 +3,26 @@ let current_site = "Solihull";
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const data = await get_pools(current_site);
-    const pools = data["body"]["pools"];
-    const pools_data = data["body"]["data"];
-    // console.log(`pools: ${JSON.stringify(pools_data)}`);
-    // TO DO GET LATEST POOL DATA AND ADD IT TO POOL CARD
-    const latestPoolData = getLatestPoolData(pools, pools_data);
-    // console.log("latestPoolData", JSON.stringify(latestPoolData));
-    createPoolCards(latestPoolData);
+    await updatePoolStatus();
+    setInterval(updatePoolStatus, 5 * 60 * 1000); // Update Interval
   } catch (error) {
     console.error("Error updating pool cards:", error);
   }
 });
+
+// Function to update pool status
+async function updatePoolStatus() {
+  console.log("Updated Pool Status", new Date());
+  try {
+    const data = await get_pools(current_site);
+    const pools = data["body"]["pools"];
+    const pools_data = data["body"]["data"];
+    const latestPoolData = getLatestPoolData(pools, pools_data);
+    createPoolCards(latestPoolData);
+  } catch (error) {
+    console.error("Error updating pool cards:", error);
+  }
+}
 
 // Get the form and add the event listener
 const addTestForm = document.getElementById("addTestForm");
@@ -57,7 +65,8 @@ addTestForm.addEventListener("submit", async (event) => {
       // Show success message or close the modal
       console.log("Data logged successfully!");
       $("#addTestModal").modal("hide"); // Close the modal
-      location.reload();
+      updatePoolStatus(); // Update the pool status without reloading
+      updateTime();
     } else {
       console.error("Error logging data:", response.status);
     }
@@ -91,17 +100,6 @@ async function add_pool_data_entry(
     tester_name: `${tester_name}`,
   });
 
-  //   const raw = JSON.stringify({
-  //     operation: "add_data",
-  //     id: "1",
-  //     time: "",
-  //     free_chlorine: "1.5",
-  //     combined_chlorine: "0.5",
-  //     water_clarity: 5,
-  //     temp: 25,
-  //     tester_name: "Dan",
-  //   });
-
   // Construct the request options
   const requestOptions = {
     method: "POST",
@@ -112,7 +110,7 @@ async function add_pool_data_entry(
 
   // Use try-catch to handle errors
   try {
-    const response = fetch(
+    const response = await fetch(
       "https://sdvonb1u21.execute-api.eu-west-2.amazonaws.com/dev",
       requestOptions
     );
@@ -121,7 +119,7 @@ async function add_pool_data_entry(
     return response;
   } catch (error) {
     // Handle errors
-    logging("error", error);
+    console.error("Error adding pool data:", error);
     throw error; // Propagate the error if needed
   }
 }
@@ -153,13 +151,6 @@ async function get_pools(site) {
     }
 
     const data = await response.json();
-
-    const pools = JSON.stringify(data["body"]["pools"]);
-    const pools_data = JSON.stringify(data["body"]["data"][0]);
-
-    console.log(`get_site_data response: ${pools}`);
-    console.log(`get_site_data response: ${pools_data}`);
-
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -169,7 +160,6 @@ async function get_pools(site) {
 
 // Function to get the latest data for each pool
 function getLatestPoolData(pools, poolsData) {
-  console.log(`getLatestPoolData ${poolsData}`);
   const latestData = {};
 
   for (let i = 0; i < poolsData.length; i++) {
@@ -183,8 +173,6 @@ function getLatestPoolData(pools, poolsData) {
     ) {
       latestData[poolId] = data;
     }
-
-    console.log(`getLatestPoolData ${poolsData}`);
   }
 
   return pools.map((pool) => ({
@@ -214,15 +202,22 @@ function checkTimeDifference(timestamp, expiry_time = 2) {
 
   if (diffInHours > expiry_time) {
     console.log("The log occurred more than 2 hours ago.");
-    new Notification("Test Due", { body: `Test Due` });
+    new Notification("Pool Care App", {
+      body: `Test Due`,
+      icon: "img/branding/pool_care_app_logo.png",
+      tag: "Test Notification",
+    });
     return ["bg-danger text-light", "Test Due"];
   } else if (diffInHours > 1.5) {
     console.log("The log occurred 1.5 hours ago.");
-    new Notification("Test Soon Due", { body: `Test Soon Due` });
+    new Notification("Pool Care App", {
+      body: `Test Soon Due`,
+      icon: "img/branding/pool_care_app_logo.png",
+      tag: "Test Notification",
+    });
     return ["bg-warning", "Test Soon"];
   } else {
     console.log("The log occurred within the last 1.5 hours.");
-    new Notification("No Test Due", { body: `No Test Due` });
     return ["bg-success text-light", `✔`];
   }
 }
@@ -230,10 +225,8 @@ function checkTimeDifference(timestamp, expiry_time = 2) {
 // Function to check the time difference
 function checkReadingLevel(reading, accepted_value = 1.5) {
   if (reading > accepted_value) {
-    console.log("reading > accepted_value");
     return "fas fa-times-circle";
   } else if (reading <= accepted_value) {
-    console.log("reading <= accepted_value");
     return "fas fa-check-circle";
   }
 }
@@ -241,6 +234,7 @@ function checkReadingLevel(reading, accepted_value = 1.5) {
 // Function to create and append pool cards
 function createPoolCards(pool_list) {
   const container = document.getElementById("pool-container");
+  container.innerHTML = ""; // Clear existing cards
 
   if ((pool_list.length = 5)) {
     size_array = [
@@ -302,10 +296,6 @@ function createPoolCards(pool_list) {
     ${pool_status[1]}
   </span>`;
 
-    // const cardSubtitle = document.createElement("div");
-    // cardSubtitle.className = "badge";
-    // cardSubtitle.innerHTML = `<span>${pool_status[1]}</span>`;
-
     const freeChlorineP = document.createElement("div");
     freeChlorineP.innerHTML = `Free Chlorine: ${
       pool.free_chlorine
@@ -332,7 +322,6 @@ function createPoolCards(pool_list) {
 
     // Append elements
     cardBodyDiv.appendChild(cardTitle);
-    // cardBodyDiv.appendChild(cardSubtitle);
     cardBodyDiv.appendChild(freeChlorineP);
     cardBodyDiv.appendChild(combinedChlorineP);
     cardBodyDiv.appendChild(tempP);
