@@ -1,5 +1,6 @@
 // Configurables
 let current_site = "Solihull";
+let email_notification = false;
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -207,6 +208,9 @@ function checkTimeDifference(timestamp, expiry_time = 2) {
       icon: "img/branding/pool_care_app_logo.png",
       tag: "Test Notification",
     });
+    if (email_notification) {
+      send_email("Pool Test Due");
+    }
     return ["bg-danger text-light", "Test Due"];
   } else if (diffInHours > 1.5) {
     console.log("The log occurred 1.5 hours ago.");
@@ -228,6 +232,45 @@ function checkReadingLevel(reading, accepted_value = 1.5) {
     return "fas fa-times-circle";
   } else if (reading <= accepted_value) {
     return "fas fa-check-circle";
+  }
+}
+
+async function send_email(message) {
+  console.log("EMAIL SENT");
+  // Create headers
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  // Construct the request body
+  const raw = JSON.stringify({
+    email_to: "jovinator77@gmail.com",
+    subject: "Notification From Pool Care",
+    preheader: "Notification From Pool Care",
+    message: message,
+    link: "https://poolcare.app/dashboard.html",
+  });
+
+  // Construct the request options
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  // Use try-catch to handle errors
+  try {
+    const response = fetch(
+      "https://pf1o181rlg.execute-api.eu-west-2.amazonaws.com/dev",
+      requestOptions
+    );
+
+    console.log(`response: ${JSON.stringify(response)}`);
+    return response;
+  } catch (error) {
+    // Handle errors
+    logging("error", error);
+    throw error; // Propagate the error if needed
   }
 }
 
